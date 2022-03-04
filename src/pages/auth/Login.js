@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,15 +15,18 @@ function Login() {
     }
     return (
         <div className="container">
-            <div className='row'>
-                <div className='col-md-12 text-center'>
+            <div className='row justify-content-md-center'>
+                <div className='col-md-4 text-center'>
                     <form onSubmit={e => e.preventDefault()}>
 
-                        <div className="form-group">   <label>Email</label>
-                            <input {...register('email', { required: true })} />
-                            {errors?.email?.type === 'required' && <p>This field is required.</p>} </div>
-                        <div className="form-group">  <label>Password</label>
-                            <input name='password' type="password" {...register('password',
+                        <div className="form-group">
+                            <label>Email</label>
+                            <input className='form-control' {...register('email', { required: true })} />
+                            {errors?.email?.type === 'required' && <p>This field is required.</p>}
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input className='form-control' name='password' type="password" {...register('password',
                                 {
                                     required: true,
                                     minLength: {
@@ -32,9 +34,10 @@ function Login() {
                                         message: "Your password must have at least 8 characters"
                                     }
                                 })} />
-                            {errors.password && <p>{errors.password.message}</p>} </div>
+                            {errors.password && <p>{errors.password.message}</p>}
+                        </div>
 
-                        <input class="btn btn-primary" type="submit" onClick={handleSubmit(onSubmit)} />
+                        <input className="btn btn-primary" type="submit" onClick={handleSubmit(onSubmit)} />
 
                         <div><Link to='/registration'><li>Register now!</li></Link></div>
 
