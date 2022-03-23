@@ -40,6 +40,10 @@ function Login() {
                         <input className="btn btn-primary" type="submit" onClick={handleSubmit(onSubmit)} />
 
                         <div><Link to='/registration'><li>Register now!</li></Link></div>
+                        <div><Link to='/newexpense'><li>date</li></Link></div>
+
+
+
 
                     </form>
                 </div>
